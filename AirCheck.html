@@ -13,6 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 
 </head>
 
@@ -71,19 +73,49 @@
         </div>
     </nav>
 
-    <div class="container-md  bg-light" style="min-height: 100vh;">
-        <div class="py-5">
-            <h5>INI HEAD BANG</h5>
-            <div class="mt-lg-auto border-3 pt-lg-5">
-
+    <div class="container-md bg-light"
+        style="margin-top: 67px; min-height: 100vh; padding-right: 0%; padding-left: 0%;">
+        <div class="bg-secondary position-relative overflow-hidden opacity-80 align-items-center justify-content-center d-flex"
+            style="height: 800px; transition: height 0.5s;">
+            <div class="position-relative py-10 flex-col" id="textboxContainer"
+                style="bottom: 0; display: flex; width: 450px;">
+                <div class="input-group d-flex">
+                    <input type="text" class="form-control" id="myInput" placeholder="Search City" aria-label="Search"
+                        aria-describedby="search-btn" style="box-shadow: none; border: none;">
+                    <button class="btn bg-light" type="button" id="search-btn" style="outline: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <h5 class="text-center py-3 text-white fs-3" id="additionalText">Get Air Quality Data Where You Live.
+                </h5>
             </div>
-            <p>INI KONTEN</p>
         </div>
+
+        <h5 class="text-dark text-3xl fw-bold text-center p-16" id="newText" style="display: none;">
+            maiwmawidiawmdiamwd
+        </h5>
+
+        <script>
+            $(document).ready(function () {
+                $('#myInput').on('keypress', function (e) {
+                    if (e.which === 13) {
+                        $('#additionalText').fadeOut(500);
+                        $('#textboxContainer').animate({ bottom: '33%' }, 1200);
+                        $('.position-relative').css({ 'height': '58px', 'transition': 'height 1s' });
+                        $('#newText').first().fadeIn(2250);
+                    }
+                });
+            });
+        </script>
     </div>
 
 </body>
 
-<footer class="bg-primary py-1">
+<footer class=" bg-primary py-1">
     <div class="container-md py-4 py-md-5 px-4 px-md-3 text-body-secondary border-bottom border-light">
         <div class="row">
             <div class="col-lg-3 mb-3">

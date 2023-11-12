@@ -19,7 +19,7 @@
 </head>
 
 <body class="bg-body-secondary">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-0 fixed-top">
         <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
             <a class="navbar-brand" href="#">
                 <img src="./assets/img/Brand-Logo.svg" class="rounded float-start">
@@ -31,7 +31,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item px-2 dropdown">
-                        <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             AirCheck
                         </a>
@@ -41,7 +41,7 @@
                         </ul>
                     </li>
                     <li class="nav-item px-2 dropdown">
-                        <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Analysis
                         </a>
@@ -51,7 +51,7 @@
                         </ul>
                     </li>
                     <li class="nav-item px-2 dropdown">
-                        <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Company
                         </a>
@@ -67,7 +67,7 @@
                 <form class="d-flex">
                     <button type="button" class="btn btn-primary" href="#">Login</button>
                     <ul class="px-1"></ul>
-                    <button type="button" class="btn btn-outline-light" href="Home.html">Signup</button>
+                    <button type="button" class="btn btn-outline-light" href="#">Signup</button>
                 </form>
             </div>
         </div>
@@ -76,15 +76,20 @@
     <div class="container-md bg-light min-h-screen d-flex align-items-center p-32">
         <div>
             <h5 style="width: 450px;" class="py-3 text-6xl">Cek kualitas udara di sekitar anda</h5>
-            <button role="button" class="hover:bg-blue-500 text-dark px-6 py-2 rounded bg-blue-400 text-2xl">
+            <button role="button"
+                class="items-center flex hover:bg-blue-500 text-dark px-3 py-2 rounded bg-blue-400 text-2xl">
                 Check Now
-                <span>&#10132;</span>
+                <ul class="px-1"></ul>
+                <svg class="" xmlns="http://www.w3.org/2000/svg" width="30" height="28" fill="currentColor"
+                    class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                </svg>
             </button>
         </div>
 
         <img width="100%" height="100%" class="" src="assets/img/OIP.jpeg" alt="">
     </div>
-
 
 </body>
 
@@ -98,7 +103,7 @@
             </div>
             <div class="col-6 col-lg-2 offset-lg-1 mb-3 text-light text-opacity-75">
                 <h5>AirCheck</h5>
-                <ul class="list-unstyled">
+                <ul class="py-2 list-unstyled">
                     <li class="mb-2">
                         <a class="text-light text-decoration-none" href="#">Try AirCheck</a>
                     </li>
@@ -109,7 +114,7 @@
             </div>
             <div class="col-6 col-lg-2 mb-3 text-light text-opacity-75">
                 <h5>Analysis</h5>
-                <ul class="list-unstyled">
+                <ul class="py-2 list-unstyled">
                     <li class="mb-2">
                         <a class="text-light text-decoration-none" href="#">Articles and Insights</a>
                     </li>
@@ -120,7 +125,7 @@
             </div>
             <div class="col-6 col-lg-2 mb-3 text-light text-opacity-75">
                 <h5>Company</h5>
-                <ul class="list-unstyled">
+                <ul class="py-2 list-unstyled">
                     <li class="mb-2">
                         <a class="text-light text-decoration-none" href="#">About</a>
                     </li>

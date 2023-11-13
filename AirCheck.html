@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
-    <!-- Add Bootstrap CSS from a CDN (Update the version) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
+    <script src="assets/js/script.js"></script>
 </head>
 
 <body class="bg-body-secondary">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-0 fixed-top">
         <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="Landing_page.html">
                 <img src="./assets/img/Brand-Logo.svg" class="rounded float-start">
                 </svg>
             </a>
@@ -35,7 +35,7 @@
                             aria-expanded="false">
                             AirCheck
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="rounded dropdown-ctn">
                             <li><a class="dropdown-item" href="AirCheck.html">Try AirCheck</a></li>
                             <li><a class="dropdown-item" href="#">Download</a></li>
                         </ul>
@@ -45,7 +45,7 @@
                             aria-expanded="false">
                             Analysis
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="rounded dropdown-ctn">
                             <li><a class="dropdown-item" href="#">Articles and Insights</a></li>
                             <li><a class="dropdown-item" href="#">Air Quality Trends</a></li>
                         </ul>
@@ -55,7 +55,7 @@
                             aria-expanded="false">
                             Company
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="rounded dropdown-ctn">
                             <li><a class="dropdown-item" href="#">About</a></li>
                             <li><a class="dropdown-item" href="#">Blogs</a></li>
                         </ul>
@@ -63,11 +63,25 @@
                     <li class="nav-item px-2">
                         <a class="nav-link active" aria-current="page" href="#">FAQs</a>
                     </li>
+
                 </ul>
                 <form class="d-flex">
-                    <button type="button" class="btn btn-primary" href="#">Login</button>
-                    <ul class="px-1"></ul>
-                    <button type="button" class="btn btn-outline-light" href="#">Signup</button>
+                    <ul id="profile-container" style="display: none;">
+                        <img width="40px" height="40px" src="" alt="Profile" class="profile-picture"
+                            style="border-radius: 50%;">
+                    </ul>
+                    <ul id="logout-container" style="display: none;">
+                        <a href="#" onclick="logout()">Logout</a>
+                    </ul>
+
+                    <ul id="login-container">
+                        <ul class="d-flex">
+                            <button type="button" class="btn btn-primary"
+                                onclick="window.location.href='login.html?source=AirCheck.html'">Login</button>
+                            <ul class="px-1"></ul>
+                            <button type="button" class="btn btn-outline-light">Signup</button>
+                        </ul>
+                    </ul>
                 </form>
             </div>
         </div>
@@ -82,7 +96,7 @@
                 <div class="input-group d-flex">
                     <input type="text" class="form-control" id="myInput" placeholder="Search City" aria-label="Search"
                         aria-describedby="search-btn" style="box-shadow: none; border: none;">
-                    <button class="btn bg-light" type="button" id="search-btn" style="outline: none;">
+                    <button class="btn bg-light" type="button" id="search-btn" style="border: none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-search" viewBox="0 0 16 16">
                             <path
@@ -90,27 +104,22 @@
                         </svg>
                     </button>
                 </div>
-                <h5 class="text-center py-3 text-white fs-3" id="additionalText">Get Air Quality Data Where You Live.
+
+                <h5 class="text-center py-3 text-white fs-3" id="additionalText">Get Your Air Quality Data
                 </h5>
             </div>
         </div>
 
-        <h5 class="text-dark text-3xl fw-bold text-center p-16" id="newText" style="display: none;">
-            maiwmawidiawmdiamwd
-        </h5>
-
-        <script>
-            $(document).ready(function () {
-                $('#myInput').on('keypress', function (e) {
-                    if (e.which === 13) {
-                        $('#additionalText').fadeOut(500);
-                        $('#textboxContainer').animate({ bottom: '33%' }, 1200);
-                        $('.position-relative').css({ 'height': '58px', 'transition': 'height 1s' });
-                        $('#newText').first().fadeIn(2250);
-                    }
-                });
-            });
-        </script>
+        <div id="newText" style="display: none;">
+            <div class="justify-content-between p-24" style="display: flex;">
+                <h5 class="text-dark text-3xl fw-bold text-center py-16">
+                    maiwmawidiawmdiamwd
+                </h5>
+                <h5 class="text-dark text-3xl fw-bold text-center py-16">
+                    maiwmawidiawmdiamwd
+                </h5>
+            </div>
+        </div>
     </div>
 
 </body>

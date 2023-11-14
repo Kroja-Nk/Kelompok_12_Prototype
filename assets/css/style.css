@@ -35,3 +35,7 @@ footer {
 .dropdown:focus .dropdown-ctn {
     display: none;
 }
+
+#profile-container:hover .dropdown-ctn {
+    display: block;
+}

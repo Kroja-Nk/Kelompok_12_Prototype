@@ -1,50 +1,80 @@
-// Check if the user is logged in (retrieve from local storage)
-var isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-// Update the navbar based on login status
-function updateNavbar() {
-    if (isLoggedIn) {
-        $('#login-container').hide();
-        $('#profile-container').show();
-        $('#logout-container').show();
-    } else {
-        $('#login-container').show();
-        $('#profile-container').hide();
-        $('#logout-container').hide();
-    }
-}
-
-// Load profile picture if logged in
 $(document).ready(function () {
-    if (isLoggedIn) {
-        var profilePicture = localStorage.getItem('profilePicture');
-        $('.profile-picture').attr('src', profilePicture);
-    }
-    updateNavbar();
+    checkLoginStatus();
 });
 
-// Function to simulate logout
-function logout() {
-    // Reset login status and profile picture URL in local storage
-    localStorage.setItem('isLoggedIn', 'false');
-    localStorage.setItem('profilePicture', '');
+// Login button click event
+$(document).on('click', '#loginButton', function () {
+    // Store the current page URL
+    localStorage.setItem('redirectPage', window.location.href);
 
-    // Redirect to home page
-    window.location.href;
-}
+    window.location.href = 'login.html';
+});
+$(document).on('click', '#signupButton', function () {
+    // Store the current page URL
+    localStorage.removeItem('redirectPage');
 
-// Simulate successful login
-function login() {
-    // Save login status and profile picture URL to local storage
+    window.location.href = 'signup.html';
+});
+
+// Login form submission
+$(document).on('submit', '#loginForm', function (event) {
+    event.preventDefault();
+
+    // Simulate a login (replace with your actual authentication logic)
+    var username = $('#username').val();
     localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('profilePicture', 'assets/img/akun.svg');
+    localStorage.setItem('username', username);
 
-    // Get the source page from the URL
-    var sourcePage = new URLSearchParams(window.location.search).get('source') || 'Landing_page.html';
+    // Update login status in the navigation bar
 
-    // Redirect to the source page
-    window.location.href = sourcePage;
+    // Hide the login button
+    $('#loginButton').hide();
+
+    // Redirect to the original page
+    var redirectPage = localStorage.getItem('redirectPage');
+    window.location.href = redirectPage;
+
+    // Clear the redirectPage from localStorage
+    console.log('apus bang');
+    localStorage.removeItem('redirectPage');
+});
+
+// Function to check login status
+function checkLoginStatus() {
+    // Check if the user is logged in (you might use a more secure method in production)
+    var isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+        // User is logged in
+        var username = localStorage.getItem('username');
+
+        // Update login status in the navigation bar
+        $('#loginStatus').append(
+            '<img src="user_profile.jpg" alt="User Profile" width="40" height="40">' +
+            '<button id="logoutButton">Logout</button>'
+        );
+
+        // Hide the login button
+        $('#loginButton').hide();
+        $('#signupButton').hide();
+        $('#logoutButton').show();
+    } else {
+        $('#logoutButton').hide();
+    }
 }
+
+// Logout button click event
+$(document).on('click', '#logoutButton', function (event) {
+
+    localStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('username');
+
+    // Clear login status in the navigation bar
+    $('#loginStatus').empty();
+
+    // Redirect to the home page
+    window.location.href = 'Landing_page.html';
+});
 
 $(document).ready(function () {
     $('#myInput').on('keypress', function (e) {

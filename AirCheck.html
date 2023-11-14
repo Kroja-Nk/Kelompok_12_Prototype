@@ -66,23 +66,10 @@
 
                 </ul>
                 <form class="d-flex">
-                    <ul id="profile-container" style="display: none;">
-                        <img width="40px" height="40px" src="" alt="Profile" class="profile-picture"
-                            style="border-radius: 50%;">
-                    </ul>
-                    <ul id="logout-container" style="display: none;">
-                        <a href="#"
-                            onclick="window.location.href='AirCheck.html?source=AirCheck.html'; logout()">Logout</a>
-                    </ul>
-
-                    <ul id="login-container">
-                        <ul class="d-flex">
-                            <button type="button" class="btn btn-primary"
-                                onclick="window.location.href='login.html?source=AirCheck.html'">Login</button>
-                            <ul class="px-1"></ul>
-                            <button type="button" class="btn btn-outline-light">Signup</button>
-                        </ul>
-                    </ul>
+                    <ul id="loginStatus"></ul>
+                    <button type="button" id="loginButton" class="btn btn-primary">Login</button>
+                    <ul class="px-2"></ul>
+                    <button type="button" id="signupButton" class="btn btn-outline-light">Signup</button>
                 </form>
             </div>
         </div>

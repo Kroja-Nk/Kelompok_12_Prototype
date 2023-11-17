@@ -2,198 +2,236 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>AirCheck</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="assets/js/script.js"></script>
+
+    <link href="assets/css/variables.css" rel="stylesheet">
+
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
 </head>
 
-<body class="bg-body-secondary">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-0 fixed-top">
-        <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
-            <a class="navbar-brand" href="Landing_page.html">
-                <img src="./assets/img/Brand-Logo.svg" class="rounded float-start">
+<body>
+    <header id="header" class="header fixed-top" data-scrollto-offset="0">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+                <img src="./assets/img/Brand-Logo.svg" class="">
                 </svg>
             </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item px-2">
-                        <a class="nav-link active" aria-current="page" href="Landing_page.html">Home</a>
-                    </li>
-                    <li class="nav-item px-2 dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            AirCheck
-                        </a>
-                        <ul class="rounded dropdown-ctn">
-                            <li><a class="dropdown-item" href="AirCheck.html">Try AirCheck</a></li>
-                            <li><a class="dropdown-item" href="#">Download</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item px-2 dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Analysis
-                        </a>
-                        <ul class="rounded dropdown-ctn">
-                            <li><a class="dropdown-item" href="#">Articles and Insights</a></li>
-                            <li><a class="dropdown-item" href="#">Air Quality Trends</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item px-2 dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Company
-                        </a>
-                        <ul class="rounded dropdown-ctn">
-                            <li><a class="dropdown-item" href="#">About</a></li>
-                            <li><a class="dropdown-item" href="#">Blogs</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link active" aria-current="page" href="#">FAQs</a>
-                    </li>
 
+            <nav id="navbar" class="navbar">
+                <ul>
+
+                    <li><a class="nav-link scrollto" href="Landing_page.html">Home</a></li>
+                    <li class="dropdown"><a href="#"><span>AirCheck</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="AirCheck.html">Try AirCheck</a></li>
+                            <li><a href="download.html">Download</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Analysis</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="trends.html">Air Quality Trends</a></li>
+                            <li><a href="article.html">Artticle and Insights</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Company</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="index.html#portfolio">FAQs</a></li>
                 </ul>
-                <form class="d-flex">
-                    <ul id="loginStatus"></ul>
-                    <button type="button" id="loginButton" class="btn btn-primary">Login</button>
-                    <ul class="px-2"></ul>
-                    <button type="button" id="signupButton" class="btn btn-outline-light">Signup</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+                <i class="bi bi-list mobile-nav-toggle d-none"></i>
+            </nav><!-- .navbar -->
 
-    <div class="container-md bg-light"
-        style="margin-top: 67px; min-height: 100vh; padding-right: 0%; padding-left: 0%;">
-        <div class="bg-secondary position-relative overflow-hidden opacity-80 align-items-center justify-content-center d-flex"
-            style="height: 800px; transition: height 0.5s;">
-            <div class="position-relative py-10 flex-col" id="textboxContainer"
-                style="bottom: 0; display: flex; width: 450px;">
-                <div class="input-group d-flex">
-                    <input type="text" class="form-control" id="myInput" placeholder="Search City" aria-label="Search"
-                        aria-describedby="search-btn" style="box-shadow: none; border: none;">
-                    <button class="btn bg-light" type="button" id="search-btn" style="border: none;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-                    </button>
+            <form class="d-flex">
+                <ul id="loginStatus"></ul>
+                <a class="loginButton" href="login.html">Login</a>
+                <a class="signupButton" href="signup.html">Signup</a>
+            </form>
+
+        </div>
+    </header><!-- End Header -->
+
+    <main class="container-fluid" data-aos="fade-down"
+        style="min-height: 0vh; margin-top: 69px; padding-right: 0%; padding-left: 0%;">
+        <div class="bg-shrinked d-flex"></div>
+        <div class="search-city">
+            <div class="input-group d-flex">
+                <input type="text" class="form-control" id="city-input" placeholder="Search City" aria-label="Search"
+                    aria-describedby="search-btn" style="box-shadow: none; border: none;">
+                <button class="btn bg-light bi bi-search" type="button" id="search-btn"
+                    style="border: none; color: black;"></button>
+            </div>
+
+            <h5 class="text-center py-3" id="someText">Get Your Air Quality Data
+            </h5>
+        </div>
+
+        <section class="result container-md">
+            <h1 class="text-center pt-20 pb-4" style="font-size: 35px;">Current Air Quality</h1>
+
+            <div class="row gy-2 justify-content-between">
+                <div class="col-lg-7 map">
+                    <div id="map" style="height: 500px; width: 95%;"></div>
                 </div>
 
-                <h5 class="text-center py-3 text-white fs-3" id="additionalText">Get Your Air Quality Data
-                </h5>
-            </div>
-        </div>
+                <div class="col-lg-5 overview text-center align-items-center justify-content-center">
+                    <div class="aqi"><span>91</span></div>
+                    <div class="text">miawmiaw maiwmawiawmai maiwmawiamw maiwmaiw maiwmiawmiamiawi amwiawmiamim aiwm
+                        iammaiwmimaiwm imawimi awmmiawmi.</div>
+                </div>
 
-        <div id="newText" style="display: none;">
-            <div class="justify-content-between p-32" style="display: flex;">
-                <h5 class="text-dark text-3xl fw-bold text-center py-16">
-                    maiwmawidiawmdiamwd
-                </h5>
-                <h5 class="text-dark text-3xl fw-bold text-center py-16">
-                    maiwmawidiawmdiamwd
-                </h5>
             </div>
-        </div>
-    </div>
+
+            <div class="chart mt-10 pb-10">
+                <div class="d-flex aqi-legend-wrapper text-center justify-content-center">
+                    <div class="aqi-legend bg-green">
+                        <p class="aqi-legend-range">0-50</p>
+                        <p class="aqi-legend-label">Good</p>
+                    </div>
+                    <div class="aqi-legend bg-yellow">
+                        <p class="aqi-legend-range">51-100</p>
+                        <p class="aqi-legend-label">Moderate</p>
+                    </div>
+                    <div class="aqi-legend bg-orange">
+                        <p class="aqi-legend-range">101-150</p>
+                        <p class="aqi-legend-label">Unhealthy for sensitive groups</p>
+                    </div>
+                    <div class="aqi-legend bg-red">
+                        <p class="aqi-legend-range">151-200</p>
+                        <p class="aqi-legend-label">Unhealthy</p>
+                    </div>
+                    <div class="aqi-legend bg-purple">
+                        <p class="aqi-legend-range">201-300</p>
+                        <p class="aqi-legend-label">Very unhealthy</p>
+                    </div>
+                    <div class="aqi-legend" style="background: #a06a7b;">
+                        <p class="aqi-legend-range">301+</p>
+                        <p class="aqi-legend-label">Hazardous</p>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class=" col-lg-6">
+                        <h1 class="text-center py-10" style="font-size: 35px;">History</h1>
+                        <canvas id="historyChart"></canvas>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h1 class="text-center py-10" style="font-size: 35px;">Forecast</h1>
+                        <canvas id="forecastChart"></canvas>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
 
-<footer class=" bg-primary py-1">
-    <div class="container-md py-4 py-md-5 px-4 px-md-3 text-body-secondary border-bottom border-light">
-        <div class="row">
-            <div class="col-lg-3 mb-3">
-                <a class="" href="#">
-                    <img width="75%" height="75%" src="./assets/img/Brand-Logo.svg" class="rounded float-start">
-                </a>
-            </div>
-            <div class="col-6 col-lg-2 offset-lg-1 mb-3 text-light text-opacity-75">
-                <h5>AirCheck</h5>
-                <ul class="py-2 list-unstyled">
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">Try AirCheck</a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">Download</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3 text-light text-opacity-75">
-                <h5>Analysis</h5>
-                <ul class="py-2 list-unstyled">
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">Articles and Insights</a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">Air Quality Trends</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3 text-light text-opacity-75">
-                <h5>Company</h5>
-                <ul class="py-2 list-unstyled">
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">About</a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">Blog</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3 text-light text-opacity-75">
-                <h5>FAQs</h5>
-            </div>
-        </div>
-    </div>
-    <div class="container-md py-2">
-        <div class="row">
-            <div class="col-lg-3 mb-3">
-                <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">
-                            AirCheck©2020-2023
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">
-                            Terms & policies
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a class="text-light text-decoration-none" href="#">
-                            Privacy policy
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-1 offset-lg-1 mb-3 text-light">
-                <a class="text-light text-decoration-none" href="#">Twitter</a>
-            </div>
-            <div class="col-6 col-lg-1 mb-3 text-light text-opacity-75">
-                <a class="text-light text-decoration-none" href="#">YouTube</a>
-            </div>
-            <div class="col-6 col-lg-1 mb-3 text-light text-opacity-75">
-                <a class="text-light text-decoration-none" href="#">GitHub</a>
-            </div>
-            <div class="col-6 col-lg-1 mb-3 text-light text-opacity-75">
-                <a class="text-light text-decoration-none" href="#">LinkedIn</a>
-            </div>
-        </div>
+<footer id="footer" class="footer">
 
+    <div class="footer-content">
+        <div class="container-md">
+            <div class="row">
+
+                <div class="col-lg-3 mb-3">
+                    <a href="#">
+                        <img width="75%" height="75%" src="./assets/img/Brand-Logo.svg" class="rounded float-start">
+                    </a>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1">
+                    <h5>AirCheck</h5>
+                    <ul class="list-unstyled">
+                        <li><a class="text-light" href="#">Try AirCheck</a></li>
+                        <li><a class="text-light" href="#">Download</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Analysis</h5>
+                    <ul class="list-unstyled">
+                        <li><a class="text-light" href="#">Articles and Insights</a></li>
+                        <li><a class="text-light" href="#">Air Quality Trends</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a class="text-light" href="#">About</a></li>
+                        <li><a class="text-light" href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul>
+                        <li><a href="faq.html">
+                                <h5>FAQs</h5>
+                            </a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
     </div>
-</footer>
+
+    <div class="footer-legal">
+
+        <div class="container-md d-flex flex-lg-row">
+            <div class="copyright d-flex flex-column align-items-center align-items-lg-start">
+                <p>AirCheck©2020-2023</p>
+                <p><a href="">Terms & policies</a></p>
+                <p><a href="">Privacy policy</a></p>
+            </div>
+
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+</footer><!-- End Footer -->
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script src="assets/js/main.js"></script>
 
 </html>

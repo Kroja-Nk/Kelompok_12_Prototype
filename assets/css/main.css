@@ -488,7 +488,7 @@ footer {
 # AirCheck Stylings
 --------------------------------------------------------------*/
 .bg-shrinked {
-  background-image: url(/miawmaiwmdiamdi/assets/img/aircheck-bg.jpg);
+  background-image: url(../img/aircheck-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;

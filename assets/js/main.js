@@ -84,13 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Login sistem
     $(document).on('click', '.loginButton', function () {
-        localStorage.removeItem('redirectPage');
         localStorage.setItem('redirectPage', window.location.href);
 
         window.location.href = 'login.html';
     });
     $(document).on('click', '.signupButton', function () {
-        localStorage.removeItem('redirectPage');
         localStorage.setItem('redirectPage', window.location.href);
 
         window.location.href = 'signup.html';
@@ -119,8 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
             var username = localStorage.getItem('username');
 
             $('#loginStatus').append(
-                '<img src="assets/img/akun.svg" alt="User Profile" width="40" height="40">' +
-                '<button id="logoutButton">Logout</button>'
+                '<div class="d-flex">' +
+                '<img src="assets/img/gambar.jpg" alt="User Profile" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;border: 1px solid #fff;">' +
+                '<button id="logoutButton">Logout</button>' +
+                '</div>'
             );
 
             $('.loginButton').hide();
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
 
                     $('.search-city').css({
-                        'top': '130px',
+                        'top': '135px',
                         'transition': 'top 1s'
                     });
 

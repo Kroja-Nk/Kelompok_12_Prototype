@@ -68,10 +68,29 @@
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
 
-            <form class="d-flex">
-                <ul id="loginStatus"></ul>
+            <form class="d-flex form">
+                <ul id="loginStatus">
+                    <div class="dropdown">
+                        <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            style="border-radius: 50%; padding: 0 0 0 0; box-shadow: none;">
+                            <a href="#">
+                                <img src="assets/img/gambar.jpg" alt=""
+                                    style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;border: 1px solid #fff;">
+                            </a>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item bi bi-person-circle" href="profile.html"> Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item bi bi-door-open-fill" id="logoutButton" href="#"> Logout</a>
+                        </div>
+                    </div>
+                </ul>
                 <a class="loginButton" href="login.html">Login</a>
                 <a class="signupButton" href="signup.html">Signup</a>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             </form>
 
         </div>

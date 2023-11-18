@@ -116,18 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isLoggedIn === 'true') {
             var username = localStorage.getItem('username');
 
-            $('#loginStatus').append(
-                '<div class="d-flex">' +
-                '<img src="assets/img/gambar.jpg" alt="User Profile" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;border: 1px solid #fff;">' +
-                '<button id="logoutButton">Logout</button>' +
-                '</div>'
-            );
-
+            $('#loginStatus').show();
             $('.loginButton').hide();
             $('.signupButton').hide();
-            $('.logoutButton').show();
         } else {
-            $('.logoutButton').hide();
+            $('#loginStatus').hide();
         }
     }
 
@@ -140,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.location.href = 'Landing_page.html';
     });
+
 
     //Animation on Scroll
     function aos_init() {

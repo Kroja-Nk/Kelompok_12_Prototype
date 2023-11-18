@@ -93,7 +93,7 @@
         </div>
     </main>
 
-    <section class="result container-md">
+    <section class="result container-md ">
         <h1 class="text-center pt-10 pb-4">Current Air Quality</h1>
 
         <div class="row gy-2">
@@ -113,7 +113,7 @@
 
         </div>
 
-        <div class="shadowed mt-3 pb-10">
+        <div class="shadowed mt-3 mb-10 pb-10">
             <div class="d-flex aqi-legend-wrapper text-center justify-content-center">
                 <div class="aqi-legend bg-green" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
                     <p class="aqi-legend-range">0-50</p>
@@ -142,14 +142,14 @@
                 </div>
             </div>
             <div class="row justify-content-between">
-                <div class=" col-lg-6">
+                <div class="col-lg-6">
                     <h1 class="text-center py-10" style="font-size: 35px;">History</h1>
-                    <div id="chartHis"></div>
+                    <div class="shadow-sm" id="chartHis"></div>
                 </div>
 
                 <div class="col-lg-6">
                     <h1 class="text-center py-10" style="font-size: 35px;">Forecast</h1>
-                    <div id="chartFor"></div>
+                    <div class="shadow-sm" id="chartFor"></div>
                 </div>
             </div>
         </div>
@@ -236,7 +236,6 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 <script src="assets/js/main.js"></script>

@@ -84,12 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Login sistem
     $(document).on('click', '.loginButton', function () {
+        localStorage.removeItem('redirectPage');
         localStorage.setItem('redirectPage', window.location.href);
 
         window.location.href = 'login.html';
     });
     $(document).on('click', '.signupButton', function () {
         localStorage.removeItem('redirectPage');
+        localStorage.setItem('redirectPage', window.location.href);
 
         window.location.href = 'signup.html';
     });
@@ -107,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         var redirectPage = localStorage.getItem('redirectPage');
         window.location.href = redirectPage;
 
-        console.log('apus bang');
         localStorage.removeItem('redirectPage');
     });
 
@@ -162,24 +163,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 var input = $(this).val().trim();
 
                 if (input != '') {
-                    $('.container-fluid').css({
-                        'min-height': '130vh'
-                    });
-
                     $('#someText').css({ 'opacity': '0', 'transition': 'opacity 1s ease-in-out, top 0.2s ease-in-out' });
 
                     $('.bg-shrinked').css({
                         'height': '6vh',
-                        'transition': 'height 1s'
+                        'transition': 'height 0.8s'
                     });
 
                     $('.search-city').css({
-                        'top': '60px',
+                        'top': '130px',
                         'transition': 'top 1s'
                     });
 
                     $('.result').css({
                         'opacity': '1',
+                        'position': 'relative',
                         'visibility': 'visible',
                         'pointer-events': 'all',
                         'transition': 'opacity 0.8s ease-in-out 0.8s'
@@ -196,16 +194,8 @@ document.addEventListener('DOMContentLoaded', () => {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
     //Chart
-    Chart.defaults.plugins.legend.display = false;
-
-    var ctxHistory = document.getElementById('historyChart').getContext('2d');
-    var ctxForecast = document.getElementById('forecastChart').getContext('2d');
-
-    var monthHistory = ['Okt', 'Sep', 'Ags', 'Jul', 'Jun', 'Mei'];
-    var aqiHistory = [119, 98, 101, 99, 100, 99];
-
-    var monthForecast = ['Des', 'Jan', 'Feb', 'Mar', 'Apr', 'Mei'];
-    var aqiForecast = [92, 103, 121, 119, 128, 110];
+    var dataHis = [120, 150, 130, 146, 157, 190, 137, 198, 162, 210, 190];
+    var dataFor = [113, 98, 74, 91, 178, 191, 139, 148, 172, 160, 190];
 
     function getColor(value) {
         if (value > 300) {
@@ -223,75 +213,95 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    var colorsAqiHistory = aqiHistory.map(value => getColor(value));
-    var colorsAqiForecast = aqiForecast.map(value => getColor(value));
+    let chartHis;
+    let chartFor;
 
-    var historyChart = new Chart(ctxHistory, {
-        type: 'bar',
-        data: {
-            labels: monthHistory,
-            datasets: [{
-                data: aqiHistory,
-                backgroundColor: colorsAqiHistory
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    suggestedMax: 140,
-                    suggestedMin: 90,
-                    beginAtZero: false,
-                    ticks: {
-                        stepSize: 5
-                    },
-                    title: {
-                        display: true,
-                        text: 'AQI'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Month'
-                    }
-                }
-            }
-        }
-    });
+    function charHist(datasetNum) {
+        // Hide the chart container before displaying the new chart
+        document.getElementById('chartHis');
 
-    var forecastChart = new Chart(ctxForecast, {
-        type: 'bar',
-        data: {
-            labels: monthForecast,
-            datasets: [{
-                label: 'AQI Average',
-                data: aqiForecast,
-                backgroundColor: colorsAqiForecast
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    suggestedMax: 140,
-                    suggestedMin: 90,
-                    beginAtZero: false,
-                    ticks: {
-                        stepSize: 5
-                    },
-                    title: {
-                        display: true,
-                        text: 'AQI'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Month'
-                    }
-                }
-            }
+        // Based on the button clicked, select the respective dataset
+        const selectedDataset = datasetNum === 1 ? dataHis : dataFor;
+        const colors = selectedDataset.map(value => getColor(value));
+
+        // If chart exists, destroy it before creating a new one
+        if (chartHis) {
+            chartHis.destroy();
         }
-    });
+
+        // Create a new chart
+        chartHis = Highcharts.chart('chartHis', {
+            chart: {
+                type: 'column',
+                inverted: false // Set to true for a horizontal bar chart
+            },
+            title: {
+                text: ''
+            },
+            legend: {
+                enabled: false
+            },
+            yAxis: {
+                title: {
+                    text: 'AQI US'
+                }
+            },
+            plotOptions: {
+                column: {
+                    colorByPoint: true,
+                    colors: colors
+                }
+            },
+
+            series: [{
+                data: selectedDataset
+            }]
+        });
+    }
+
+    charHist(1);
+
+    function chartFore(datasetNum) {
+        // Hide the chart container before displaying the new chart
+        document.getElementById('chartFor');
+
+        // Based on the button clicked, select the respective dataset
+        const selectedDataset = datasetNum === 1 ? dataHis : dataFor;
+        const colors = selectedDataset.map(value => getColor(value));
+
+        // If chart exists, destroy it before creating a new one
+        if (chartFor) {
+            chartFor.destroy();
+        }
+
+        // Create a new chart
+        chartFor = Highcharts.chart('chartFor', {
+            chart: {
+                type: 'column',
+                inverted: false // Set to true for a horizontal bar chart
+            },
+            title: {
+                text: ''
+            },
+            legend: {
+                enabled: false
+            },
+            yAxis: {
+                title: {
+                    text: 'AQI US'
+                }
+            },
+            plotOptions: {
+                column: {
+                    colorByPoint: true,
+                    colors: colors
+                }
+            },
+            series: [{
+                data: selectedDataset
+            }]
+        });
+    }
+
+    chartFore(2);
 });

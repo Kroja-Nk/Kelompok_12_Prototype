@@ -1318,6 +1318,10 @@ footer {
   background-color: white;
 }
 
+.fotonih {
+  cursor: pointer;
+}
+
 .switch {
   position: relative;
   display: inline-block;

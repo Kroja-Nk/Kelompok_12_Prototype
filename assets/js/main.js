@@ -116,7 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isLoggedIn === 'true') {
             var username = localStorage.getItem('username');
 
-            $('#loginStatus').show();
+            $('#loginStatus').append(`
+            <div class="dropdown" style="padding-left: 100px;">
+                <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"
+                    style="border-radius: 50%; padding: 0 0 0 0; box-shadow: none;">
+                    <a href="#">
+                        <img src="assets/img/gambar.jpg" alt=""
+                            style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;border: 1px solid #fff;">
+                    </a>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item bi bi-person-circle" href="profile.html"> Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item bi bi-door-open-fill" id="logoutButton" href="#"> Logout</a>
+                </div>
+            </div>`
+            );
             $('.loginButton').hide();
             $('.signupButton').hide();
         } else {
@@ -298,4 +314,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     chartFore(2);
+});
+
+/*--------------------------------------------------------------
+# Profile
+--------------------------------------------------------------*/
+document.addEventListener('DOMContentLoaded', function () {
+    const inputText = document.getElementById('usrname');
+    const editButton = document.getElementById('editButton');
+    const saveButton = document.getElementById('saveButton');
+    const name = document.getElementById('nameee');
+
+    // Retrieve text from localStorage on page load
+    const storedText = localStorage.getItem('storedText');
+    if (storedText) {
+        inputText.value = storedText;
+        if (storedText) {
+            name.textContent = storedText;
+        }
+    }
+
+    // Edit button functionality
+    editButton.addEventListener('click', function () {
+        if (inputText.readOnly) {
+            inputText.readOnly = false;
+            inputText.focus();
+        } else {
+            inputText.readOnly = true;
+        }
+    });
+
+    saveButton.addEventListener('click', function () {
+        name.textContent = inputText.value;
+        localStorage.setItem('storedText', inputText.value);
+    });
+});
+
+function showProfileMenu() {
+    document.getElementById('profileMenu').style.display = 'block';
+    document.getElementById('profileDetails').style.display = 'none';
+    document.getElementById('changePassword').style.display = 'none';
+    document.getElementById('savedLocation').style.display = 'none';
+}
+
+function showProfileDetails() {
+    document.getElementById('profileMenu').style.display = 'none';
+    document.getElementById('profileDetails').style.display = 'block';
+    document.getElementById('changePassword').style.display = 'none';
+    document.getElementById('savedLocation').style.display = 'none';
+}
+
+function showChangePassword() {
+    document.getElementById('profileMenu').style.display = 'none';
+    document.getElementById('profileDetails').style.display = 'none';
+    document.getElementById('changePassword').style.display = 'block';
+    document.getElementById('savedLocation').style.display = 'none';
+}
+function showSavedLocation() {
+    document.getElementById('profileMenu').style.display = 'none';
+    document.getElementById('profileDetails').style.display = 'none';
+    document.getElementById('changePassword').style.display = 'none';
+    document.getElementById('savedLocation').style.display = 'block';
+}
+
+
+const showPopupButton = document.getElementById('showPopupButton');
+const popupContainer = document.getElementById('popupContainer');
+
+showPopupButton.addEventListener('click', function () {
+    popupContainer.style.display = 'block';
+});
+
+const closePopupButton = document.getElementById('closePopupButton');
+
+closePopupButton.addEventListener('click', function () {
+    popupContainer.style.display = 'none';
 });

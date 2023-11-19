@@ -1301,6 +1301,10 @@ footer {
   padding: 10px;
 }
 
+.selection:hover {
+  background-color: rgba(var(--color-black-rgb), 0.4);
+}
+
 .circle-number {
   width: 45px;
   height: 45px;
@@ -1311,6 +1315,7 @@ footer {
   text-align: center;
   line-height: 47px;
   margin-right: 10px;
+  font-weight: bold;
 }
 
 .menu .notif:hover {

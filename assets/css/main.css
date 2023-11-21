@@ -1379,6 +1379,16 @@ input:checked+.slider:before {
 /*--------------------------------------------------------------
 # FAQs Stylings
 --------------------------------------------------------------*/
+.faq {
+  justify-content: center;
+  align-items: center;
+  padding-left: 44px;
+  padding-right: 44px;
+  height: 70vh;
+  margin-bottom: 12vh;
+  margin-top: 18vh;
+}
+
 .faq h3+h3 {
   margin-top: 2vh;
 }
@@ -1448,9 +1458,6 @@ input:checked+.slider:before {
   background-color: darkgrey;
   border-radius: 4px;
 }
-
-
-
 
 /*--------------------------------------------------------------
 # Footer

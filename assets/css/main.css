@@ -1376,6 +1376,80 @@ input:checked+.slider:before {
   transform: translateX(26px);
 }
 
+/*--------------------------------------------------------------
+# FAQs Stylings
+--------------------------------------------------------------*/
+.faq h3+h3 {
+  margin-top: 2vh;
+}
+
+.accordion-item {
+  background-color: rgba(var(--color-secondary-light-rgb), 0.4);
+  border: none;
+}
+
+.accordion-button:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: black;
+  background-color: rgba(var(--color-secondary-light-rgb), 0.4);
+  border-bottom: none;
+}
+
+.accordion-button {
+  font-size: 20px;
+  font-weight: bold;
+  height: 7vh;
+  background-color: rgba(var(--color-secondary-light-rgb), 0.4);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(var(--color-secondary-light-rgb), 0.4);
+  color: black;
+}
+
+.accordion-body {
+  background-color: rgba(var(--color-secondary-light-rgb), 0.4);
+}
+
+.accordion-header {
+  border-bottom: none;
+}
+
+.accordion-collapse {
+  border-bottom-color: transparent;
+}
+
+.accordion-button::after {
+  border: none;
+  pointer-events: none;
+  display: none;
+}
+
+.que {
+  border: none;
+  width: 50%;
+  height: 70%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: darkgrey lightgrey;
+}
+
+.que::-webkit-scrollbar {
+  width: 8px;
+}
+
+.que::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.que::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 4px;
+}
+
+
 
 
 /*--------------------------------------------------------------

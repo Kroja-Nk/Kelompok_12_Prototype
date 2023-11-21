@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
 
                     $('.search-city').css({
-                        'top': '135px',
+                        'top': '137px',
                         'transition': 'top 1s'
                     });
 
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     //Map leaflet
-    var map = L.map('map').setView([-7.955556, 112.612744], 10); // Set initial coordinates and zoom level
+    var map = L.map('map').setView([-7.955556, 112.612744], 10);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
@@ -227,23 +227,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let chartFor;
 
     function charHist(datasetNum) {
-        // Hide the chart container before displaying the new chart
         document.getElementById('chartHis');
 
-        // Based on the button clicked, select the respective dataset
         const selectedDataset = datasetNum === 1 ? dataHis : dataFor;
         const colors = selectedDataset.map(value => getColor(value));
 
-        // If chart exists, destroy it before creating a new one
         if (chartHis) {
             chartHis.destroy();
         }
 
-        // Create a new chart
         chartHis = Highcharts.chart('chartHis', {
             chart: {
                 type: 'column',
-                inverted: false // Set to true for a horizontal bar chart
+                inverted: false
             },
             title: {
                 text: ''
@@ -272,23 +268,19 @@ document.addEventListener('DOMContentLoaded', () => {
     charHist(1);
 
     function chartFore(datasetNum) {
-        // Hide the chart container before displaying the new chart
         document.getElementById('chartFor');
 
-        // Based on the button clicked, select the respective dataset
         const selectedDataset = datasetNum === 1 ? dataHis : dataFor;
         const colors = selectedDataset.map(value => getColor(value));
 
-        // If chart exists, destroy it before creating a new one
         if (chartFor) {
             chartFor.destroy();
         }
 
-        // Create a new chart
         chartFor = Highcharts.chart('chartFor', {
             chart: {
                 type: 'column',
-                inverted: false // Set to true for a horizontal bar chart
+                inverted: false
             },
             title: {
                 text: ''
@@ -314,8 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     chartFore(2);
-});
 
+});
 /*--------------------------------------------------------------
 # Profile
 --------------------------------------------------------------*/
@@ -325,7 +317,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const saveButton = document.getElementById('saveButton');
     const name = document.getElementById('nameee');
 
-    // Retrieve text from localStorage on page load
     const storedText = localStorage.getItem('storedText');
     if (storedText) {
         inputText.value = storedText;
@@ -334,7 +325,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Edit button functionality
     editButton.addEventListener('click', function () {
         if (inputText.readOnly) {
             inputText.readOnly = false;

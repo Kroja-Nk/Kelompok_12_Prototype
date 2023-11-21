@@ -1384,7 +1384,7 @@ input:checked+.slider:before {
 .footer {
   color: var(--color-white);
   font-size: 15px;
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 .footer .footer-content {

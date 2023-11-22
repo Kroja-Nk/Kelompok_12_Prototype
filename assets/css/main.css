@@ -944,39 +944,6 @@ footer {
   padding-left: 5px;
 }
 
-.blog .post-author {
-  padding: 20px;
-  margin-top: 30px;
-}
-
-.blog .post-author img {
-  max-width: 120px;
-  margin-right: 20px;
-}
-
-.blog .post-author h4 {
-  font-weight: 600;
-  font-size: 22px;
-  margin-bottom: 0px;
-  padding: 0;
-  color: var(--color-secondary);
-}
-
-.blog .post-author .social-links {
-  margin: 0 10px 10px 0;
-}
-
-.blog .post-author .social-links a {
-  color: rgba(var(--color-secondary-rgb), 0.5);
-  margin-right: 5px;
-}
-
-.blog .post-author p {
-  font-style: italic;
-  color: rgba(var(--color-gray-rgb), 0.8);
-  margin-bottom: 0;
-}
-
 .blog .comments {
   margin-top: 30px;
 }
@@ -992,10 +959,15 @@ footer {
 
 .blog .comments .comment .comment-img {
   margin-right: 14px;
+  border-radius: 50%;
+  padding: 0 0 0 0;
 }
 
 .blog .comments .comment .comment-img img {
-  width: 60px;
+  width: 75px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .blog .comments .comment h5 {
@@ -1417,10 +1389,12 @@ input:checked+.slider:before {
 .accordion-button:not(.collapsed) {
   background-color: rgba(var(--color-secondary-light-rgb), 0.4);
   color: black;
+  border-radius: 8px;
 }
 
 .accordion-body {
   background-color: rgba(var(--color-secondary-light-rgb), 0.4);
+  border-radius: 8px;
 }
 
 .accordion-header {

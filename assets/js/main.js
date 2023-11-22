@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
 
                     $('.search-city').css({
-                        'top': '137px',
+                        'top': '130px',
                         'transition': 'top 1s'
                     });
 

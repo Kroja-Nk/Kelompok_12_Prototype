@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     });
 
+    //Scroll Top
     const scrollTop = document.querySelector('.scroll-top');
     if (scrollTop) {
         const togglescrollTop = function () {
@@ -78,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
     }
 
+    // Login sistem
     $(document).ready(function () {
         checkLoginStatus();
     });
 
-    // Login sistem
     $(document).on('click', '.loginButton', function () {
         localStorage.setItem('redirectPage', window.location.href);
 
@@ -114,16 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
         var isLoggedIn = localStorage.getItem('isLoggedIn');
 
         if (isLoggedIn === 'true') {
-            var username = localStorage.getItem('username');
+            var username = localStorage.getItem('storedText');
+            if (username == '') {
+                username = "Miaw";
+            }
 
             $('#loginStatus').append(`
-            <div class="dropdown" style="padding-left: 100px;">
+            <div class="dropdown" style="padding-left: 40px;">
                 <button class="btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"
                     style="border-radius: 50%; padding: 0 0 0 0; box-shadow: none;">
                     <a href="#">
                         <img src="assets/img/gambar.jpg" alt=""
-                            style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;border: 1px solid #fff;">
+                            style="width: 40px;height: 40px;object-fit: cover;border-radius: 50%;border: 1px solid #fff;">
                     </a>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -133,6 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>`
             );
+            $('#loginStatus-nav').append(`
+                <a>
+                    <img src="assets/img/gambar.jpg" alt="" onclick="window.location.href='profile.html'"
+                        style="margin-right: 10px;width: 40px;height: 40px;object-fit: cover;border-radius: 50%;border: 1px solid #fff;">
+                    <span class="text-white">${username}</span>
+                </a>
+                <br class="">
+            `);
             $('.loginButton').hide();
             $('.signupButton').hide();
         } else {
@@ -168,34 +180,26 @@ document.addEventListener('DOMContentLoaded', () => {
     # AirCheck
     --------------------------------------------------------------*/
     $(document).ready(function () {
-        $('#city-input').on('keypress', function (e) {
-            if (e.which === 13) {
-                var input = $(this).val().trim();
+        $('#searchForm').submit(function (event) {
+            event.preventDefault();
+            performSearch();
+        });
 
-                if (input != '') {
-                    $('#someText').css({ 'opacity': '0', 'transition': 'opacity 1s ease-in-out, top 0.2s ease-in-out' });
-
-                    $('.bg-shrinked').css({
-                        'height': '6vh',
-                        'transition': 'height 0.8s'
-                    });
-
-                    $('.search-city').css({
-                        'top': '130px',
-                        'transition': 'top 1s'
-                    });
-
-                    $('.result').css({
-                        'opacity': '1',
-                        'position': 'relative',
-                        'visibility': 'visible',
-                        'pointer-events': 'all',
-                        'transition': 'opacity 0.8s ease-in-out 0.8s'
-                    });
-
-                }
+        $('#search-btn').keypress(function (event) {
+            if (event.which === 13) { // Check if Enter key is pressed
+                event.preventDefault();
+                performSearch();
             }
         });
+
+        function performSearch() {
+            const searchTerm = $('#search-btn').val();
+            $('.bg-img').css('min-height', '8vh');
+            $('.bg-img').css('margin-top', '4em');
+            $('.hidden-content').fadeIn(3000);
+            $('#searchForm h2').hide();
+            map.invalidateSize();
+        }
     });
 
     //Map leaflet
@@ -317,7 +321,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const saveButton = document.getElementById('saveButton');
     const name = document.getElementById('nameee');
 
-    const storedText = localStorage.getItem('storedText');
+    var storedText = localStorage.getItem('storedText');
+
+    if (storedText == '') {
+        storedText = "Miaw";
+    }
+
     if (storedText) {
         inputText.value = storedText;
         if (storedText) {

@@ -207,6 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
+    map.invalidateSize();
+
     //Chart
     var dataHis = [120, 150, 130, 146, 157, 190, 137, 198, 162, 210, 190];
     var dataFor = [113, 98, 74, 91, 178, 191, 139, 148, 172, 160, 190];

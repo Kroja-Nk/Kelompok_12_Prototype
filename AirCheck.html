@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
 
     <link href="assets/css/variables.css" rel="stylesheet">
 
@@ -40,6 +40,10 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
+
+                    <li class="form">
+                        <div id="loginStatus-nav" class="justify-content-start"></div>
+                    </li>
 
                     <li><a class="nav-link scrollto" href="Landing_page.html">Home</a></li>
                     <li class="dropdown"><a href="#"><span>AirCheck</span> <i
@@ -64,100 +68,83 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="faq.html">FAQs</a></li>
+
+                    <li class="form"><a class="loginButton" href="login.html">Login<span
+                                class="bi bi-arrow-up-right"></span></a></li>
+                    <li class="form"><a class="signupButton" href="signup.html">Signup <span class=""></span></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
 
-            <form class="d-flex form">
-                <ul id="loginStatus"></ul>
-                <a class="loginButton" href="login.html">Login</a>
-                <a class="signupButton" href="signup.html">Signup</a>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <form class="form">
+                <div class="d-flex">
+                    <ul id="loginStatus" style="margin-right: 0; margin-bottom: 0;"></ul>
+                    <a class="loginButton" href="login.html">Login</a>
+                    <a class="signupButton" href="signup.html">Signup</a>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                </div>
             </form>
 
         </div>
     </header><!-- End Header -->
 
-    <main class="container-fluid content-body" data-aos="fade-down"
-        style="padding-top: 69px; padding-left: 0%; padding-right: 0%;">
-        <div class="bg-shrinked d-flex"></div>
-        <div class="search-city">
-            <div class="input-group d-flex">
-                <input type="text" class="form-control" id="city-input" placeholder="Search City" aria-label="Search"
-                    aria-describedby="search-btn" style="box-shadow: none; border: none;">
-                <button class="btn bg-light bi bi-search" type="button" id="search-btn"
-                    style="border: none; color: black;"></button>
-            </div>
+    <div class="container-fluid" data-aos="fade-down">
+        <div class="row align-items-center justify-content-center bg-img">
+            <div class="col-md-6 sichi">
+                <form id="searchForm" class="text-center">
+                    <div class="input-group d-flex">
+                        <input type="text" class="form-control" id="city-input" placeholder="Search City"
+                            aria-label="Search" aria-describedby="search-btn" style="box-shadow: none; border: none;">
+                        <button class="btn bg-white bi bi-search" type="submit" id="search-btn"
+                            style="border: none; color: black;"></button>
+                    </div>
 
-            <h5 class="text-center py-3" id="someText">Get Your Air Quality Data
-            </h5>
+                    <h2 class="text-center pt-3">Get Your Air Quality Data</h2>
+                </form>
+            </div>
         </div>
-    </main>
+        <div class="row hidden-content">
 
-    <section class="result container-md ">
-        <h1 class="text-center pt-10 pb-4">Current Air Quality</h1>
+            <h1 class="text-center pt-10 pb-4">Current Air Quality</h1>
 
-        <div class="row gy-2">
-            <div class="col-lg-7">
-                <div>
-                    <div class="shadowed" id="map" style="height: 500px; width: 100%;"></div>
-                </div>
-            </div>
+            <div class="col-lg-11 text-center m-auto">
 
-            <div class="col-lg-5">
-                <div class="shadowed text-center" style="padding-top: 20px; height: 500px;">
-                    <div class="aqi"><span>91</span></div>
-                    <div class="text">miawmiaw maiwmawiawmai maiwmawiamw maiwmaiw maiwmiawmiamiawi amwiawmiamim aiwm
-                        iammaiwmimaiwm imawimi awmmiawmi.</div>
-                </div>
-            </div>
+                <div class="row justify-content-between gx-3 mb-3">
+                    <div class="col-sm-1 col-md-7 mb-3 mb-md-0">
+                        <div>
+                            <div class="shadowed" id="map" style="height: 500px; width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-5 mb-md-0 mr-md-3 ml-md-3">
+                        <div class="shadowing text-center" style="padding-top: 20px; height: 500px; min-height: 0;">
+                            <div class="aqi"><span>91</span></div>
+                            <div class="text">miawmiaw maiwmawiawmai maiwmawiamw maiwmaiw maiwmiawmiamiawi amwiawmiamim
+                                aiwm
+                                iammaiwmimaiwm imawimi awmmiawmi.</div>
+                        </div>
+                    </div>
 
-        </div>
-
-        <div class="shadowed mt-3 mb-10 pb-10">
-            <div class="d-flex aqi-legend-wrapper text-center justify-content-center">
-                <div class="aqi-legend bg-green" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
-                    <p class="aqi-legend-range">0-50</p>
-                    <p class="aqi-legend-label">Good</p>
-                </div>
-                <div class="aqi-legend bg-yellow">
-                    <p class="aqi-legend-range">51-100</p>
-                    <p class="aqi-legend-label">Moderate</p>
-                </div>
-                <div class="aqi-legend bg-orange">
-                    <p class="aqi-legend-range">101-150</p>
-                    <p class="aqi-legend-label">Unhealthy for sensitive groups</p>
-                </div>
-                <div class="aqi-legend bg-red text-white">
-                    <p class="aqi-legend-range">151-200</p>
-                    <p class="aqi-legend-label">Unhealthy</p>
-                </div>
-                <div class="aqi-legend bg-purple text-white">
-                    <p class="aqi-legend-range">201-300</p>
-                    <p class="aqi-legend-label">Very unhealthy</p>
-                </div>
-                <div class="aqi-legend text-white"
-                    style="background: #a06a7b; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
-                    <p class="aqi-legend-range">301+</p>
-                    <p class="aqi-legend-label">Hazardous</p>
-                </div>
-            </div>
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <h1 class="text-center py-10" style="font-size: 35px;">History</h1>
-                    <div class="shadow-sm" id="chartHis"></div>
                 </div>
 
-                <div class="col-lg-6">
-                    <h1 class="text-center py-10" style="font-size: 35px;">Forecast</h1>
-                    <div class="shadow-sm" id="chartFor"></div>
+                <div class="row justify-content-between gx-3 mb-3">
+                    <div class="col-sm-1 col-md-6 mb-3 mb-md-0">
+                        <div class="shadowed">
+                            <h1>History</h1>
+                            <div class="shadowing" id="chartHis"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-6 mb-md-0">
+                        <div class="shadowed">
+                            <h1>Forecast</h1>
+                            <div class="shadowing" id="chartFor"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-    </section>
+    </div>
 
 </body>
 

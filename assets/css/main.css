@@ -1376,14 +1376,22 @@ input:checked+.slider:before {
 /*--------------------------------------------------------------
 # FAQs Stylings
 --------------------------------------------------------------*/
+@media (max-width: 819px) {
+  .faq {
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: 100vh;
+    margin-top: 5vh;
+  }
+}
+
 .faq {
   justify-content: center;
   align-items: center;
-  padding-left: 44px;
-  padding-right: 44px;
-  height: 70vh;
-  margin-bottom: 12vh;
-  margin-top: 18vh;
+  /* padding-left: 44px; */
+  /* padding-right: 44px; */
+  height: 100vh;
 }
 
 .faq h3+h3 {
@@ -1415,11 +1423,14 @@ input:checked+.slider:before {
   background-color: rgba(var(--color-secondary-light-rgb), 0.4);
   color: black;
   border-radius: 8px;
+  font-size: 14px;
 }
 
 .accordion-body {
   background-color: rgba(var(--color-secondary-light-rgb), 0.4);
   border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .accordion-header {
@@ -1438,9 +1449,8 @@ input:checked+.slider:before {
 
 .que {
   border: none;
-  width: 50%;
-  height: 70%;
   overflow-y: auto;
+  height: 410px;
   scrollbar-width: thin;
   scrollbar-color: darkgrey lightgrey;
 }

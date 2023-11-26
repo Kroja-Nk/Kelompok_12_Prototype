@@ -72,7 +72,8 @@
 
                     <li class="form"><a class="loginButton" href="login.html">Login<span
                                 class="bi bi-arrow-up-right"></span></a></li>
-                    <li class="form"><a class="signupButton" href="signup.html">Signup <span class=""></span></a></li>
+                    <li class="form"><a class="signupButton" href="signup.html">Signup <span
+                                class="bi bi-arrow-up-right"></span></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
@@ -91,197 +92,213 @@
         </div>
     </header><!-- End Header -->
 
-    <main id="main" class="" data-aos="fade-down">
+    <main id="main" class="main" data-aos="fade-down">
         <div class="container-md mt-24">
-            <div class="row gy-2 justify-content-between">
-                <div class="col-lg-5 shadowed p-10">
-                    <h2 class="pb-8" style="font-size: xx-large; font-weight: bold;">Live AQI US Rank</h2>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="text-center">Rank</th>
-                                <th class="text-center">Country</th>
-                                <th class="text-center">Population</th>
-                                <th class="text-center">AQI</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center">
-                                <td>1</td>
-                                <td>Country A</td>
-                                <td>50M</td>
-                                <td><span class="aqi-level aqi-hazarous">403</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>2</td>
-                                <td>Country B</td>
-                                <td>70M</td>
-                                <td><span class="aqi-level aqi-hazarous">323</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>3</td>
-                                <td>Country C</td>
-                                <td>30M</td>
-                                <td><span class="aqi-level aqi-poor">186</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>4</td>
-                                <td>Country D</td>
-                                <td>90M</td>
-                                <td><span class="aqi-level aqi-poor">180</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>5</td>
-                                <td>Country E</td>
-                                <td>20M</td>
-                                <td><span class="aqi-level aqi-poor">174</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>6</td>
-                                <td>Country F</td>
-                                <td>20M</td>
-                                <td><span class="aqi-level aqi-poor">168</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>7</td>
-                                <td>Country G</td>
-                                <td>20M</td>
-                                <td><span class="aqi-level aqi-poor">167</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>8</td>
-                                <td>Country H</td>
-                                <td>20M</td>
-                                <td><span class="aqi-level aqi-poor">161</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>9</td>
-                                <td>Country I</td>
-                                <td>20M</td>
-                                <td><span class="aqi-level aqi-poor">157</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>10</td>
-                                <td>Country J</td>
-                                <td>20M</td>
-                                <td><span class="aqi-level aqi-moderate">146</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="col-lg-11 m-auto">
+
+                <div class="row justify-content-between gx-3">
+                    <div class="col-sm-1 col-md-5 mb-3 mb-md-0">
+                        <div class="shadowed p-3" style="overflow-x: auto;">
+                            <h2 class="pb-8" style="font-size: x-large; font-weight: bold;">Live AQI US Rank</h2>
+                            <div style="overflow-x: auto;">
+
+                                <table class="table" style="font-size: 14px;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Rank</th>
+                                            <th class="text-center">Country</th>
+                                            <th class="text-center">Population</th>
+                                            <th class="text-center">AQI</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>1</td>
+                                            <td>Country A</td>
+                                            <td>50M</td>
+                                            <td><span class="aqi-level aqi-hazarous">403</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>2</td>
+                                            <td>Country B</td>
+                                            <td>70M</td>
+                                            <td><span class="aqi-level aqi-hazarous">323</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>3</td>
+                                            <td>Country C</td>
+                                            <td>30M</td>
+                                            <td><span class="aqi-level aqi-poor">186</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>4</td>
+                                            <td>Country D</td>
+                                            <td>90M</td>
+                                            <td><span class="aqi-level aqi-poor">180</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>5</td>
+                                            <td>Country E</td>
+                                            <td>20M</td>
+                                            <td><span class="aqi-level aqi-poor">174</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>6</td>
+                                            <td>Country F</td>
+                                            <td>20M</td>
+                                            <td><span class="aqi-level aqi-poor">168</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>7</td>
+                                            <td>Country G</td>
+                                            <td>20M</td>
+                                            <td><span class="aqi-level aqi-poor">167</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>8</td>
+                                            <td>Country H</td>
+                                            <td>20M</td>
+                                            <td><span class="aqi-level aqi-poor">161</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>9</td>
+                                            <td>Country I</td>
+                                            <td>20M</td>
+                                            <td><span class="aqi-level aqi-poor">157</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>10</td>
+                                            <td>Country J</td>
+                                            <td>20M</td>
+                                            <td><span class="aqi-level aqi-moderate">146</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-md-7 mb-md-0 mr-md-3 ml-md-3">
+                        <div class="shadowing p-3" style="min-height: 0;">
+                            <h2 class="pb-8" style="font-size: x-large; font-weight: bold;">History AQI US Rank</h2>
+
+                            <div style="overflow-x: auto;">
+                                <table class="table" style="font-size: 14px;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Rank</th>
+                                            <th class="text-center">Country</th>
+                                            <th class="text-center">2022</th>
+                                            <th class="text-center">2021</th>
+                                            <th class="text-center">2020</th>
+                                            <th class="text-center">2019</th>
+                                            <th class="text-center">2018</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>1</td>
+                                            <td>Country A</td>
+                                            <td><span class="aqi-level aqi-hazarous">398</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">302</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">320</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">401</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">310</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>2</td>
+                                            <td>Country B</td>
+                                            <td><span class="aqi-level aqi-hazarous">398</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">372</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">378</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">367</span></td>
+                                            <td><span class="aqi-level aqi-hazarous">388</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>3</td>
+                                            <td>Country C</td>
+                                            <td><span class="aqi-level aqi-unhealthy">239</span></td>
+                                            <td><span class="aqi-level aqi-unhealthy">190</span></td>
+                                            <td><span class="aqi-level aqi-unhealthy">187</span></td>
+                                            <td><span class="aqi-level aqi-unhealthy">210</span></td>
+                                            <td><span class="aqi-level aqi-unhealthy">239</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>4</td>
+                                            <td>Country D</td>
+                                            <td><span class="aqi-level aqi-poor">200</span></td>
+                                            <td><span class="aqi-level aqi-unhealthy">210</span></td>
+                                            <td><span class="aqi-level aqi-poor">198</span></td>
+                                            <td><span class="aqi-level aqi-poor">191</span></td>
+                                            <td><span class="aqi-level aqi-poor">200</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>5</td>
+                                            <td>Country E</td>
+                                            <td><span class="aqi-level aqi-poor">198</span></td>
+                                            <td><span class="aqi-level aqi-poor">200</span></td>
+                                            <td><span class="aqi-level aqi-poor">187</span></td>
+                                            <td><span class="aqi-level aqi-poor">188</span></td>
+                                            <td><span class="aqi-level aqi-poor">191</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>6</td>
+                                            <td>Country F</td>
+                                            <td><span class="aqi-level aqi-poor">176</span></td>
+                                            <td><span class="aqi-level aqi-poor">167</span></td>
+                                            <td><span class="aqi-level aqi-moderate">137</span></td>
+                                            <td><span class="aqi-level aqi-moderate">138</span></td>
+                                            <td><span class="aqi-level aqi-moderate">129</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>7</td>
+                                            <td>Country G</td>
+                                            <td><span class="aqi-level aqi-moderate">140</span></td>
+                                            <td><span class="aqi-level aqi-moderate">120</span></td>
+                                            <td><span class="aqi-level aqi-moderate">134</span></td>
+                                            <td><span class="aqi-level aqi-moderate">129</span></td>
+                                            <td><span class="aqi-level aqi-moderate">125</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>8</td>
+                                            <td>Country H</td>
+                                            <td><span class="aqi-level aqi-moderate">121</span></td>
+                                            <td><span class="aqi-level aqi-moderate">138</span></td>
+                                            <td><span class="aqi-level aqi-moderate">122</span></td>
+                                            <td><span class="aqi-level aqi-mid">98</span></td>
+                                            <td><span class="aqi-level aqi-moderate">101</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>9</td>
+                                            <td>Country I</td>
+                                            <td><span class="aqi-level aqi-mid">97</span></td>
+                                            <td><span class="aqi-level aqi-mid">100</span></td>
+                                            <td><span class="aqi-level aqi-mid">95</span></td>
+                                            <td><span class="aqi-level aqi-mid">93</span></td>
+                                            <td><span class="aqi-level aqi-mid">83</span></td>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>10</td>
+                                            <td>Country J</td>
+                                            <td><span class="aqi-level aqi-mid">67</span></td>
+                                            <td><span class="aqi-level aqi-mid">74</span></td>
+                                            <td><span class="aqi-level aqi-good">50</span></td>
+                                            <td><span class="aqi-level aqi-mid">59</span></td>
+                                            <td><span class="aqi-level aqi-good">45</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="shadowed p-10" style="max-width: 78 vh;">
-                    <h2 class="pb-8" style="font-size: xx-large; font-weight: bold;">History AQI US Rank</h2>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="text-center">Rank</th>
-                                <th class="text-center">Country</th>
-                                <th class="text-center">2022</th>
-                                <th class="text-center">2021</th>
-                                <th class="text-center">2020</th>
-                                <th class="text-center">2019</th>
-                                <th class="text-center">2018</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center">
-                                <td>1</td>
-                                <td>Country A</td>
-                                <td><span class="aqi-level aqi-hazarous">398</span></td>
-                                <td><span class="aqi-level aqi-hazarous">302</span></td>
-                                <td><span class="aqi-level aqi-hazarous">320</span></td>
-                                <td><span class="aqi-level aqi-hazarous">401</span></td>
-                                <td><span class="aqi-level aqi-hazarous">310</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>2</td>
-                                <td>Country B</td>
-                                <td><span class="aqi-level aqi-hazarous">398</span></td>
-                                <td><span class="aqi-level aqi-hazarous">372</span></td>
-                                <td><span class="aqi-level aqi-hazarous">378</span></td>
-                                <td><span class="aqi-level aqi-hazarous">367</span></td>
-                                <td><span class="aqi-level aqi-hazarous">388</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>3</td>
-                                <td>Country C</td>
-                                <td><span class="aqi-level aqi-unhealthy">239</span></td>
-                                <td><span class="aqi-level aqi-unhealthy">190</span></td>
-                                <td><span class="aqi-level aqi-unhealthy">187</span></td>
-                                <td><span class="aqi-level aqi-unhealthy">210</span></td>
-                                <td><span class="aqi-level aqi-unhealthy">239</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>4</td>
-                                <td>Country D</td>
-                                <td><span class="aqi-level aqi-poor">200</span></td>
-                                <td><span class="aqi-level aqi-unhealthy">210</span></td>
-                                <td><span class="aqi-level aqi-poor">198</span></td>
-                                <td><span class="aqi-level aqi-poor">191</span></td>
-                                <td><span class="aqi-level aqi-poor">200</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>5</td>
-                                <td>Country E</td>
-                                <td><span class="aqi-level aqi-poor">198</span></td>
-                                <td><span class="aqi-level aqi-poor">200</span></td>
-                                <td><span class="aqi-level aqi-poor">187</span></td>
-                                <td><span class="aqi-level aqi-poor">188</span></td>
-                                <td><span class="aqi-level aqi-poor">191</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>6</td>
-                                <td>Country F</td>
-                                <td><span class="aqi-level aqi-poor">176</span></td>
-                                <td><span class="aqi-level aqi-poor">167</span></td>
-                                <td><span class="aqi-level aqi-moderate">137</span></td>
-                                <td><span class="aqi-level aqi-moderate">138</span></td>
-                                <td><span class="aqi-level aqi-moderate">129</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>7</td>
-                                <td>Country G</td>
-                                <td><span class="aqi-level aqi-moderate">140</span></td>
-                                <td><span class="aqi-level aqi-moderate">120</span></td>
-                                <td><span class="aqi-level aqi-moderate">134</span></td>
-                                <td><span class="aqi-level aqi-moderate">129</span></td>
-                                <td><span class="aqi-level aqi-moderate">125</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>8</td>
-                                <td>Country H</td>
-                                <td><span class="aqi-level aqi-moderate">121</span></td>
-                                <td><span class="aqi-level aqi-moderate">138</span></td>
-                                <td><span class="aqi-level aqi-moderate">122</span></td>
-                                <td><span class="aqi-level aqi-mid">98</span></td>
-                                <td><span class="aqi-level aqi-moderate">101</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>9</td>
-                                <td>Country I</td>
-                                <td><span class="aqi-level aqi-mid">97</span></td>
-                                <td><span class="aqi-level aqi-mid">100</span></td>
-                                <td><span class="aqi-level aqi-mid">95</span></td>
-                                <td><span class="aqi-level aqi-mid">93</span></td>
-                                <td><span class="aqi-level aqi-mid">83</span></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>10</td>
-                                <td>Country J</td>
-                                <td><span class="aqi-level aqi-mid">67</span></td>
-                                <td><span class="aqi-level aqi-mid">74</span></td>
-                                <td><span class="aqi-level aqi-good">50</span></td>
-                                <td><span class="aqi-level aqi-mid">59</span></td>
-                                <td><span class="aqi-level aqi-good">45</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                <div class="row justify-content-between gx-3 mb-3">
+                    <div>
+                        <div class="shadowed my-10" id="map" style="height: 500px; width: 100%;"></div>
+                    </div>
                 </div>
             </div>
-
-            <div class="shadowed my-10" id="map" style="height: 500px; width: 100%;"></div>
 
         </div>
     </main>

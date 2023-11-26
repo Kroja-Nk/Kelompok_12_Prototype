@@ -459,6 +459,58 @@ footer {
 }
 
 /*--------------------------------------------------------------
+# Landing Page Stylings
+--------------------------------------------------------------*/
+@media (max-width: 767px) {
+  .miaw {
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    margin: 0 0 !important;
+  }
+
+  .miaw .miaw-bt,
+  .miaw .miaw-ill {
+    margin: auto;
+  }
+
+  .miaw .miaw-tx {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .miaw h5 {
+    font-size: 12px;
+    font-weight: 500;
+    padding-bottom: 10px;
+  }
+}
+
+.miaw {
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 10vh;
+}
+
+.miaw h5 {
+  font-size: 50px;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+
+.miaw-ill {
+  max-width: 500px;
+  max-height: 500px;
+  min-width: none;
+  min-height: 0;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
 # AirCheck Stylings
 --------------------------------------------------------------*/
 .bg-img {

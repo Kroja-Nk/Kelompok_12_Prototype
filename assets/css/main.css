@@ -506,9 +506,6 @@ footer {
 }
 
 
-
-
-
 /*--------------------------------------------------------------
 # AirCheck Stylings
 --------------------------------------------------------------*/
@@ -575,6 +572,59 @@ footer {
   width: 200px;
   height: 60px;
 }
+
+/*--------------------------------------------------------------
+# Download Stylings
+--------------------------------------------------------------*/
+@media (max-width: 767px) {
+  .dwn {
+    justify-content: center !important;
+    align-items: center;
+    min-height: 100vh;
+    margin: 10vh 0 0 0 !important;
+  }
+
+  .dwn h5 {
+    font-size: 35px !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+  }
+}
+
+.dwn {
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  margin: 6vh 0;
+}
+
+.dwn h5 {
+  font-size: 50px;
+  font-weight: 600;
+  text-align: start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Trends Stylings

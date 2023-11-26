@@ -1374,14 +1374,46 @@ input:checked+.slider:before {
 }
 
 /*--------------------------------------------------------------
+# About Stylings
+--------------------------------------------------------------*/
+@media (max-width: 767px) {
+  .abab {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+    margin-top: 8vh;
+    font-size: 12px;
+  }
+
+  .abab .logo-ab {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+.abab {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.abab .desc-ab {
+  position: relative;
+}
+
+
+
+
+/*--------------------------------------------------------------
 # FAQs Stylings
 --------------------------------------------------------------*/
-@media (max-width: 819px) {
+@media (max-width: 767px) {
   .faq {
     justify-content: center;
     align-items: center;
     padding: 0 10px;
-    height: 100vh;
+    min-height: 100vh;
     margin-top: 5vh;
   }
 }
@@ -1389,9 +1421,7 @@ input:checked+.slider:before {
 .faq {
   justify-content: center;
   align-items: center;
-  /* padding-left: 44px; */
-  /* padding-right: 44px; */
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .faq h3+h3 {
@@ -1413,7 +1443,7 @@ input:checked+.slider:before {
 }
 
 .accordion-button {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   height: 7vh;
   background-color: rgba(var(--color-secondary-light-rgb), 0.4);
@@ -1423,13 +1453,13 @@ input:checked+.slider:before {
   background-color: rgba(var(--color-secondary-light-rgb), 0.4);
   color: black;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .accordion-body {
   background-color: rgba(var(--color-secondary-light-rgb), 0.4);
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -1474,7 +1504,6 @@ input:checked+.slider:before {
 .footer {
   color: var(--color-white);
   font-size: 15px;
-  /* padding-top: 50px; */
 }
 
 .footer .footer-content {
@@ -1498,6 +1527,7 @@ input:checked+.slider:before {
   opacity: 0.5;
   margin-bottom: 10px;
   font-family: var(--font-secondary);
+  font-size: 16px;
 }
 
 .footer .footer-content .col-6 ul li+li {

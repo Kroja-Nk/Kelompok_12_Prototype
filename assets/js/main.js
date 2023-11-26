@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const searchTerm = $('#search-btn').val();
             $('.bg-img').css('min-height', '8vh');
             $('.bg-img').css('margin-top', '4em');
-            $('.hidden-content').fadeIn(3000);
+            $('.hidden-content').fadeIn(2000);
             $('#searchForm h2').hide();
             map.invalidateSize();
         }

@@ -40,6 +40,10 @@
             <nav id="navbar" class="navbar">
                 <ul>
 
+                    <li class="form">
+                        <div id="loginStatus-nav" class="justify-content-start"></div>
+                    </li>
+
                     <li><a class="nav-link scrollto" href="Landing_page.html">Home</a></li>
                     <li class="dropdown"><a href="#"><span>AirCheck</span> <i
                                 class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -63,17 +67,23 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="faq.html">FAQs</a></li>
+
+                    <li class="form"><a class="loginButton" href="login.html">Login<span
+                                class="bi bi-arrow-up-right"></span></a></li>
+                    <li class="form"><a class="signupButton" href="signup.html">Signup <span class=""></span></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
 
-            <form class="d-flex form">
-                <ul id="loginStatus"></ul>
-                <a class="loginButton" href="login.html">Login</a>
-                <a class="signupButton" href="signup.html">Signup</a>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <form class="form">
+                <div class="d-flex">
+                    <ul id="loginStatus" style="margin-right: 0; margin-bottom: 0;"></ul>
+                    <a class="loginButton" href="login.html">Login</a>
+                    <a class="signupButton" href="signup.html">Signup</a>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                </div>
             </form>
 
         </div>

@@ -581,6 +581,18 @@ footer {
 /*--------------------------------------------------------------
 # AirCheck Stylings
 --------------------------------------------------------------*/
+@media (max-width: 800px) {
+  .air #map {
+    min-height: 300px !important;
+  }
+
+  .air .overview {
+    padding: 20px 10px;
+    height: 300px !important;
+    min-height: 0;
+  }
+}
+
 .bg-img {
   background-image: url('../img/aircheck-bg.jpg');
   background-size: cover;
@@ -591,6 +603,17 @@ footer {
 .hidden-content {
   display: none;
   padding: 20px;
+}
+
+.air #map {
+  min-height: 500px;
+  width: 100%;
+}
+
+.air .overview {
+  padding: 20px 10px;
+  height: 500px;
+  min-height: 0;
 }
 
 #searchInput {
@@ -617,7 +640,6 @@ footer {
 .aqi {
   width: 70px;
   height: 70px;
-  margin: 20px 43%;
   border-radius: 50%;
   background-color: yellow;
   display: flex;
@@ -653,7 +675,7 @@ footer {
     justify-content: center !important;
     align-items: center;
     min-height: 100vh;
-    margin: 10vh 0 0 0 !important;
+    margin: 12vh 0 0 0 !important;
   }
 
   .dwn h5 {

@@ -98,10 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     $(document).on('submit', '#loginForm', function (event) {
         event.preventDefault();
 
+        var useremail = $('#useremail').val();
         var username = $('#username').val();
         localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', username);
-
+        localStorage.setItem('useremail', useremail);
+        localStorage.setItem('storedText', username);
 
         $('.loginButton').hide();
 
@@ -314,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chartFore(2);
 
 });
+
 /*--------------------------------------------------------------
 # Profile
 --------------------------------------------------------------*/
@@ -325,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var storedText = localStorage.getItem('storedText');
 
-    if (storedText == '') {
+    if (storedText == '' || storedText == "undefined") {
         storedText = "Miaw";
     }
 

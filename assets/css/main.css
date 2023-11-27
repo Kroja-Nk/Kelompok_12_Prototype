@@ -85,6 +85,7 @@ footer {
   padding: 15px 20px;
   min-height: 40px;
   margin-top: 76px;
+  margin-bottom: 26px;
   border-bottom: 2px solid var(--color-black);
 }
 

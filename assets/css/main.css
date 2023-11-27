@@ -85,7 +85,6 @@ footer {
   padding: 15px 20px;
   min-height: 40px;
   margin-top: 76px;
-  margin-bottom: 26px;
   border-bottom: 2px solid var(--color-black);
 }
 
@@ -699,30 +698,23 @@ footer {
   text-align: start;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*--------------------------------------------------------------
 # Trends Stylings
 --------------------------------------------------------------*/
+@media (max-width: 767px) {
+  .trn #map {
+    min-height: 0;
+    height: 350px !important;
+    width: 100%;
+  }
+}
+
+.trn #map {
+  min-height: 0;
+  height: 500px;
+  width: 100%;
+}
+
 .aqi-level {
   display: inline-block;
   width: 80px;
@@ -994,7 +986,7 @@ footer {
 }
 
 /*--------------------------------------------------------------
-# Blog Details Stylings
+# Content Stylings
 --------------------------------------------------------------*/
 .blog .blog-details {
   padding: 30px;

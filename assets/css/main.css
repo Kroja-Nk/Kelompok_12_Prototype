@@ -459,9 +459,79 @@ footer {
 }
 
 /*--------------------------------------------------------------
+# Login & Signup Stylings
+--------------------------------------------------------------*/
+.log-sig {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.log-sig h1 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+
+.log-sig ul li input::placeholder {
+  font-size: 13px;
+}
+
+.log-sig a:hover {
+  text-decoration: underline;
+}
+
+.input-box,
+.input-box1,
+.log-sig-btn {
+  min-width: none;
+  width: 260px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.input-box input,
+.input-box1 input,
+.log-sig-btn button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pake-gugel {
+  min-width: none;
+  width: 300px;
+  justify-content: center;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.or-divider span {
+  padding: 0 10px;
+  color: #999;
+  font-size: 14px;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  width: 100px;
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+
+/*--------------------------------------------------------------
 # Landing Page Stylings
 --------------------------------------------------------------*/
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .miaw {
     justify-content: center;
     align-items: center;

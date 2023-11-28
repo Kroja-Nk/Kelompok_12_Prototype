@@ -1513,6 +1513,10 @@ footer {
   cursor: pointer;
 }
 
+.fotonih:hover {
+  opacity: 0.5;
+}
+
 .switch {
   position: relative;
   display: inline-block;

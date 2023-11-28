@@ -128,12 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkLoginStatus() {
         var isLoggedIn = localStorage.getItem('isLoggedIn');
-        var email = $('#useremail').val();
-        var passowrd = $('#passord').val();
 
         if (isLoggedIn === 'true') {
             var username = localStorage.getItem('storedText');
-            if (username == '') {
+            if (username == '' || username == 'undefined') {
                 username = "Miaw";
             }
 

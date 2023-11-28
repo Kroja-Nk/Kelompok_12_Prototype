@@ -413,3 +413,16 @@ const closePopupButton = document.getElementById('closePopupButton');
 closePopupButton.addEventListener('click', function () {
     popupContainer.style.display = 'none';
 });
+
+const addLoc = document.getElementById('addLoc');
+
+addLoc.addEventListener('click', function () {
+    $('#removeLoc').show();
+    popupContainer.style.display = 'none';
+});
+
+const removeLoc = document.getElementById('removeLoc');
+
+removeLoc.addEventListener('click', function () {
+    $('#removeLoc').hide();
+});

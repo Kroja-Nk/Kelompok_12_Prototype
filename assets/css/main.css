@@ -1581,10 +1581,16 @@ input:checked+.slider:before {
   .abab {
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 0;
     padding: 0 20px;
-    margin-top: 8vh;
     font-size: 12px;
+  }
+
+  .abab .logonih {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 
   .abab .logo-ab {
@@ -1611,11 +1617,19 @@ input:checked+.slider:before {
 --------------------------------------------------------------*/
 @media (max-width: 767px) {
   .faq {
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 0 10px;
     min-height: 100vh;
-    margin-top: 5vh;
+    margin-top: 4vh;
+  }
+
+  .faq .hmuq {
+    text-align: center;
+  }
+
+  .faq .input-group {
+    margin: auto;
   }
 }
 

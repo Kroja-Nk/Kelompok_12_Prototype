@@ -471,7 +471,7 @@ footer {
 .log-sig h1 {
   font-size: 35px;
   font-weight: bold;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
 }
 
 .log-sig ul li input::placeholder {
@@ -482,8 +482,13 @@ footer {
   text-decoration: underline;
 }
 
+#alert {
+  color: red;
+  font-size: 12px !important;
+  opacity: 0;
+}
+
 .input-box,
-.input-box1,
 .log-sig-btn {
   min-width: none;
   width: 260px;
@@ -492,12 +497,16 @@ footer {
 }
 
 .input-box input,
-.input-box1 input,
 .log-sig-btn button {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.input-box input.error {
+  border: 1px solid red;
+  /* Red border for error state */
 }
 
 .pake-gugel {

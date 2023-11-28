@@ -100,20 +100,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         var useremail = $('#useremail').val();
         var username = $('#username').val();
+        var password = $('#password').val();
+        var passwordck = $('#password-ck').val();
         localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('useremail', useremail);
         localStorage.setItem('storedText', username);
 
         $('.loginButton').hide();
 
-        var redirectPage = localStorage.getItem('redirectPage');
-        window.location.href = redirectPage;
+        if (useremail == "" || password == "") {
+            $("#alert").text(" Email or Password is incorrect.").css("opacity", 1);
+            $('.input-box input').addClass('error');
+            return;
+        } else if (passwordck && passwordck != password) {
+            $("#alert").text(" Email or Password is incorrect.").css("opacity", 1);
+            $('.input-box input').addClass('error');
+            return;
+        } else {
+            var redirectPage = localStorage.getItem('redirectPage');
+            window.location.href = redirectPage;
 
-        localStorage.removeItem('redirectPage');
+            localStorage.removeItem('redirectPage');
+            localStorage.removeItem('userpwd');
+            localStorage.removeItem('pwd_ck');
+        }
+
     });
 
     function checkLoginStatus() {
         var isLoggedIn = localStorage.getItem('isLoggedIn');
+        var email = $('#useremail').val();
+        var passowrd = $('#passord').val();
 
         if (isLoggedIn === 'true') {
             var username = localStorage.getItem('storedText');
@@ -138,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>`
             );
+
+
             $('#loginStatus-nav').append(`
                 <a>
                     <img src="assets/img/gambar.jpg" alt="" onclick="window.location.href='profile.html'"
@@ -157,6 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('isLoggedIn', 'false');
         localStorage.removeItem('username');
+        localStorage.removeItem('useremail');
+        localStorage.removeItem('userpwd');
 
         $('#loginStatus').empty();
 
